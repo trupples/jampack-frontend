@@ -1,0 +1,75 @@
+#items-list {
+	margin: 0;
+	padding: 2.5em 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5em;
+	justify-content: center;
+	align-content: flex-start;
+
+	list-style: none;
+
+	max-height: 100vh;
+	overflow-y: auto;
+}
+
+.item-card button {
+	position: relative;
+	user-select: none;
+	font: inherit;
+	display: inline-block;
+	width: 10em;
+	padding: 1em;
+	box-sizing: content-box;
+	background: white;
+	border: none;
+	border-radius: 0.5em;
+	box-shadow: 2px 2px 0 4px black;
+
+	cursor: pointer;
+
+	transition: transform 50ms, box-shadow 50ms;
+}
+
+.item-card button:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 0 6px black;
+}
+
+.item-card button:active {
+	transform: scale(1);
+	box-shadow: 0 0 0 2px black;
+}
+
+.item-card img {
+	height: 10em;
+	width: 100%;
+	object-fit: contain;
+}
+
+.item-card .item-name {
+	display: block;
+	font-size: 1.3em;
+	font-weight: 400;
+	text-align: center;
+}
+
+.item-card .item-price {
+	position: absolute;
+	left: 0.5em;
+	top: 0;
+	line-height: 2em;
+	font-size: 2.5em;
+	font-weight: 800;
+	color: #0006;
+}
+
+@media screen and (max-width: 660px) {
+	.item-card img {
+		height: 8em;
+	}
+
+	.item-card button {
+		width: 8em;
+	}
+}

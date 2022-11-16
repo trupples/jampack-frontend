@@ -1,0 +1,113 @@
+#StockList {
+	margin: 0;
+	padding: 2.5em;
+
+	max-height: 100vh;
+	overflow-y: auto;
+}
+
+#StockList ul {
+	padding: 0;
+	list-style: none;
+}
+
+.item-card form {
+	display: grid;
+	position: relative;
+	user-select: none;
+	font: inherit;
+	padding: 1em;
+	margin-bottom: 1.5em;
+	box-sizing: content-box;
+	background: white;
+	border: none;
+	border-radius: 0.5em;
+	box-shadow: 2px 2px 0 4px black;
+	gap: 1em;
+
+	transition: transform 50ms, box-shadow 50ms;
+
+	min-width: 200px;
+	box-sizing: content-box;
+}
+
+@media screen and (min-width: 500px) {
+	.item-card form {
+		grid-template-areas: 'image name'
+	                         'image cost'
+	                         'image sold'
+	                         'image buttons';
+		grid-template-columns: 200px 1fr;
+		grid-template-rows: 2em 2em 2em auto;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.item-card form {
+		grid-template-areas: 'image'
+	                         'name'
+	                         'cost'
+	                         'sold'
+	                         'buttons';
+	}
+}
+
+.item-card :where(.item-name, .item-cost) {
+	font-size: 1.3em;
+}
+
+.item-card input {
+	border: unset;
+	border-bottom: 3px solid black;
+	max-width: 40em;
+}
+
+.item-card button {
+	background: unset;
+	border: unset;
+	font-size: 1.2em;
+}
+
+.item-card .buttons input {
+	font-size: 1.5rem;
+	border: none;
+	border-bottom: 4px solid black;
+}
+
+.item-card .buttons button {
+	background: none;
+	border: none;
+	box-shadow: 0.08em 0.08em 0 0.24em black;
+	padding: 0.25em 0.5em;
+	cursor: pointer;
+	transition: transform 100ms, background 100ms, box-shadow 100ms;
+	margin-right: 1em;
+}
+
+.item-card .buttons button:hover {
+	transform: scale(1.02);
+	box-shadow: 0 0 0 0.24em black;
+}
+
+.item-card .buttons button:active {
+	transform: scale(1);
+	box-shadow: 0 0 0 0.16em black;
+}
+
+.item-card .buttons button:disabled {
+	pointer-events: none;
+	box-shadow: 0 0 0 0px grey;
+	border: 2px dashed grey;
+}
+
+.item-card .buttons button {
+	-font-size: 2rem;
+}
+
+.item-card .item-image {
+	grid-area: image;
+	cursor: pointer;
+}
+.item-card .item-sold { grid-area: sold; }
+.item-card .item-name { grid-area: name; }
+.item-card .item-cost { grid-area: cost; }

@@ -1,0 +1,58 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title} - Jampack</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Emoji&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+button[type="submit"] {
+	background: none;
+	border: none;
+	box-shadow: 0.08em 0.08em 0 0.24em black;
+	padding: 0.25em 0.5em;
+	cursor: pointer;
+	transition: transform 150ms, background 150ms, box-shadow 150ms;
+}
+
+button[type="submit"]:hover {
+	transform: scale(1.02);
+	box-shadow: 0 0 0 0.24em black;
+}
+
+button[type="submit"]:active {
+	transform: scale(1);
+	box-shadow: 0 0 0 0.16em black;
+}
+
+button[type="submit"]:disabled {
+	pointer-events: none;
+	box-shadow: 0 0 0 0px grey;
+	border: 2px dashed grey;
+}
+
+body {
+	height: 100vh; overflow: auto;
+  margin: 0;
+  font-family: "Poppins", "Noto Emoji", sans-serif;
+}
+</style>

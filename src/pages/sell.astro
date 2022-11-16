@@ -1,0 +1,36 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+import ItemsList from '../components/ItemsList.tsx';
+import CartView from '../components/CartView.tsx';
+
+---
+<Layout title='Sell'>
+	<main>
+		<ItemsList client:load />
+		<CartView client:load />
+	</main>
+</Layout>
+
+<style>	
+:root {
+  background: #87ceeb;
+}
+
+main {
+	display: grid;
+}
+
+@media screen and (min-width: 660px) {
+	main {
+		grid-template-columns: 1fr 25em;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	main {
+		grid-template-rows: 1fr 20em;
+	}
+}
+
+</style>

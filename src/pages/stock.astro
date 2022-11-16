@@ -1,0 +1,33 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+import StockList from '../components/StockList.tsx';
+
+---
+<Layout title='Stock'>
+	<main>
+		<StockList client:load />
+	</main>
+</Layout>
+
+<style>
+:root {
+  background: #FFAB9B;
+}
+
+/*main {
+	display: grid;
+}
+
+@media screen and (min-width: 660px) {
+	main {
+		grid-template-columns: 1fr 25em;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	main {
+		grid-template-rows: 1fr 20em;
+	}
+}*/
+</style>

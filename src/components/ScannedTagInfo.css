@@ -1,0 +1,17 @@
+#scanned-tag-info {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	max-width: 90vw; width: 20em;
+	border: 2px solid black;
+	box-shadow: 3px 3px 0 0 black;
+
+	padding: 1em;
+	box-sizing: border-box;
+}
+
+#scanned-tag-info h1 {
+	margin: unset;
+}

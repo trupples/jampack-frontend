@@ -1,0 +1,28 @@
+form * {
+	display: inline-block;
+	width: 100%;
+}
+
+form input {
+	font-size: 4rem;
+	border: none;
+	border-bottom: 4px solid black;
+}
+
+form button {
+	font-size: 2rem;
+	margin-top: 1em;
+}
+
+.error {
+	background-color: #FAD4D8;
+	margin: -2rem;
+	padding: 2rem;
+	margin-bottom: 1rem;
+
+	font-size: 1rem;
+}
+
+form p {
+	margin: 0;
+}

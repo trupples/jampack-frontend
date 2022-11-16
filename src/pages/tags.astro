@@ -1,0 +1,17 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+import TagsList from '../components/TagsList.tsx';
+
+---
+<Layout title='Tags'>
+	<main>
+		<TagsList client:only='preact' />
+	</main>
+</Layout>
+
+<style>	
+:root {
+  background: #a69ff9;
+}
+</style>

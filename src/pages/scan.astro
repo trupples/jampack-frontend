@@ -1,0 +1,12 @@
+---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ScannedTagInfo from '../components/ScannedTagInfo.tsx';
+import ProceedWithPurchase from '../components/ProceedWithPurchase.tsx';
+
+---
+
+<BaseLayout>
+	<ScannedTagInfo client:only='preact' />
+	<ProceedWithPurchase client:only='preact' />
+</BaseLayout>

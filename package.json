@@ -1,0 +1,22 @@
+{
+  "name": "jampack-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/preact": "^1.0.2",
+    "astro": "^1.1.1",
+    "preact": "^10.10.6"
+  },
+  "dependencies": {
+    "@nanostores/preact": "^0.2.1",
+    "fuzzysort": "^2.0.1",
+    "nanostores": "^0.6.0"
+  }
+}

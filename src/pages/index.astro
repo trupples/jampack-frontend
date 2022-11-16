@@ -1,0 +1,66 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout title='Home'>
+	<main>
+		<h1>JAMpack</h1>
+		<h2>The drunken logistics responsible's best friend</h2>
+
+		<p>This shit broken? Go get Ioan</p>
+		<p>This shit working? Go get Ioan a beer</p>
+
+		<div class='bruto'><a href='/auth' style='color: inherit; cursor: inherit; text-decoration: inherit;'>În viață-i greu când n-ai maieu.<br>Dar uneori ai maieu si tot e greu.</a></div>
+	</main>
+</Layout>
+
+<style>
+:root {
+  background: #c8e9a0;
+}
+
+h1 {
+	margin: 0;
+	font-size: 4rem;
+	font-weight: 600;
+	line-height: 6rem;
+	vertical-align: middle;
+}
+
+h2 {
+	margin: 0;
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 3rem;
+	vertical-align: middle;
+}
+
+.bruto {
+	display: inline-block;
+	background: white;
+	padding: 2em;
+	border: 4px solid black;
+	box-shadow: 4px 4px 0 0 black;
+	transform: rotate(-2deg);
+	position: absolute;
+	right: 3%;
+	bottom: 3%;
+}
+
+@media screen and (min-width: 660px) {
+	main {
+		padding: 2rem 4rem;
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	main {
+		padding: 1rem 1rem;
+		font-size: 1rem;
+	}
+}
+
+</style>
