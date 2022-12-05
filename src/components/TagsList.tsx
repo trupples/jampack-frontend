@@ -9,6 +9,8 @@ export default function TagsList() {
 	const [topUp, setTopUp] = useState(null);
 	const [topUpProgress, setTopUpProgress] = useState("");
 
+	const canTopUp = true;//localStorage.authLevel.includes('TAG_TOPUP');
+
 	function changeTopUp(x) {
 		setTopUpProgress('');
 		setTopUp(x);
@@ -28,8 +30,8 @@ export default function TagsList() {
 		}).then(_ => {
 			setTopUpProgress('OK!');
 			refreshTags();
-		}).catch(e => {
-			setTopUpProgress(e);
+		}, ({ error }) => {
+			setTopUpProgress(error);
 		})
 	}
 
@@ -44,7 +46,7 @@ export default function TagsList() {
 		<input type='text' placeholder='Search' onInput={e => setSearch(e.target.value)} />
 		<table>
 			<thead>
-				<tr><th>Name</th><th>Balance</th></tr>
+				<tr><th>Id</th><th>Name</th><th>Balance</th></tr>
 			</thead>
 			<tbody>
 			{ filteredTags.map(tag => {
@@ -52,16 +54,17 @@ export default function TagsList() {
 
 				return (
 					<tr class='tag-card'>
+						<td>{tag.obj.id}</td>
 						<td class='tag-name'>{hname}</td>
 						<td class='tag-balance'>{tag.obj.balance}</td>
-						<td class='top-up'><button onClick={_=>changeTopUp(tag.obj.id)}>Top up!</button></td>
+						{ canTopUp ? <td class='top-up'><button onClick={_=>changeTopUp(tag.obj.id)}>Top up!</button></td> : '' }
 					</tr>
 				);
 			}) }
 			</tbody>
 		</table>
 		{
-			topUpTag ? (<>
+			canTopUp && topUpTag ? (<>
 				<div id='top-up-blackout' onClick={_=>changeTopUp(null)}></div>
 				<form id='top-up-modal' onSubmit={e=>{e.preventDefault(); doTopUp(topUpTag.id, document.querySelector('#top-up-amount').value)}}>
 					<h1>Top up</h1>

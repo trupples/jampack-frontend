@@ -35,18 +35,18 @@
 	width: 100%;
 }
 
-#tags-list td:nth-of-type(1) {
+#tags-list td:nth-of-type(2) {
 	width: 30em;
 	max-width: 70%;
 }
 
 
-#tags-list td:nth-of-type(2) {
+#tags-list td:nth-of-type(3) {
 	width: 5em;
 	max-width: 15%;
 }
 
-#tags-list td:nth-of-type(3) {
+#tags-list td:nth-of-type(4) {
 	width: 5em;
 	max-width: 15%;
 }

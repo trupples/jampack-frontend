@@ -13,8 +13,9 @@ export default function AuthenticateForm() {
 		e.preventDefault();
 
 		post("authenticate", {'totp': codeInput.value}).then(resp => {
+			localStorage.authLevel = resp.authLevel;
 			if('error' in resp) {
-				setError(resp[error]);
+				setError(resp.error);
 			} else {
 				window.location = '/';
 			}

@@ -18,7 +18,7 @@ export function post(location, data) {
 			if(resp.error.includes('auth'))
 				window.location = '/auth?error=' + encodeURIComponent(resp['error']);
 			else
-				throw resp.error;
+				throw resp;
 		return resp;
 	});
 }
@@ -32,7 +32,7 @@ export function get(location, data) {
 			if(resp.error.includes('auth'))
 				window.location = '/auth?error=' + encodeURIComponent(resp['error']);
 			else
-				throw resp.error;
+				throw resp;
 		return resp;
 	});
 }
