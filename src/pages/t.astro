@@ -2,16 +2,24 @@
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import UserCard from '../components/UserCard.tsx';
-import FinishPayment from '../components/FinishPayment.tsx';
 
 ---
 
 <BaseLayout title=''>
 	<main>
 		<UserCard client:only="preact" />
-		<FinishPayment client:only="preact" />
 	</main>
 </BaseLayout>
+
+<script>
+	if(localStorage.needScan) {
+		localStorage.scan = window.location.search.substr(1);
+		localStorage.scanTime = Date.now();
+		delete localStorage.needScan;
+		window.close();
+		setTimeout(_ => window.close(), 1000);
+	}
+</script>
 
 <style>
 :root {

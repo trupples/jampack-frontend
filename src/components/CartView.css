@@ -101,3 +101,40 @@
 		font-size: 1.5em;
 	}
 }
+
+#checkout-modal {
+	position: fixed;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+
+	padding: 2em;
+	background: white;
+
+	width: 25em;
+	max-width: 80vw;
+
+	border: 4px solid black;
+	box-shadow: 4px 4px 0 0 black;
+	z-index: 11;
+}
+
+#checkout-modal * {
+	display: inline-block;
+	width: 100%;
+}
+
+#checkout-modal :where(h1, h2) {
+	margin: 0;
+}
+
+#checkout-modal p {
+	margin: 0;
+}
+
+#checkout-modal-backdrop {
+	position: fixed;
+	left: 0; top: 0; right: 0; bottom: 0;
+	background: rgba(255,255,255,0.7);
+
+	z-index: 10;
+}
